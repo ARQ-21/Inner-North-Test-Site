@@ -1,26 +1,25 @@
-// Make sure this line runs only once (put it outside the submit handler)
-emailjs.init("DZsKNZGsH6sDcTERs");
+// Put this once, at the top level (not inside any function)
+emailjs.init("uogRpDzNnRRcuazrF");   // ← your actual public key
 
+// Form submit handler
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     
-    event.preventDefault();        // ← Very important
+    event.preventDefault();
 
-    // Optional: disable the submit button while sending
     const submitBtn = this.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.disabled = true;
 
-    emailjs.sendForm('service_u3qqntf', 'template_6bbzgc7', this)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+    emailjs.sendForm('service_dhea8ol', 'template_4j1c34p', this)
+        .then((response) => {
+            console.log('Email sent successfully!', response);
             alert("Thank you! Your message has been sent.");
-            this.reset();                    // Clear the form
+            this.reset();
         })
-        .catch(function(error) {
-            console.error('FAILED...', error);
+        .catch((error) => {
+            console.error('Send failed:', error);
             alert("Sorry, something went wrong. Please try again later.");
         })
         .finally(() => {
-            // Re-enable the button
             if (submitBtn) submitBtn.disabled = false;
         });
 });
