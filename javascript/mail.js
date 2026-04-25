@@ -1,5 +1,5 @@
 // Put this once, at the top level (not inside any function)
-emailjs.init("uogRpDzNnRRcuazrF");   // ← your actual public key
+emailjs.init("iK6sMdX2tyexsvGhA");   // ← your actual public key
 
 // Form submit handler
 document.getElementById("contact-form").addEventListener("submit", function(event) {
@@ -9,7 +9,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     const submitBtn = this.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.disabled = true;
 
-    emailjs.sendForm('service_dhea8ol', 'template_4j1c34p', this)
+    emailjs.sendForm('service_bjmhx1n', 'template_d77fwpr', this)
         .then((response) => {
             console.log('Email sent successfully!', response);
             alert("Thank you! Your message has been sent.");
